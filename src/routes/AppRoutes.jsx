@@ -12,7 +12,7 @@ import Terms from "../pages/Terms";
 import AdminLogin from "../pages/admin/AdminLogin";
 import SuperAdminDashboard from "../pages/admin/SuperAdminDashboard";
 import TeamAdminDashboard from "../pages/admin/TeamAdminDashboard";
-import AdminOrders from "../pages/admin/AdminOrders"; // ✅ ADDED
+import AdminOrders from "../pages/admin/AdminOrders";
 
 const AppRoutes = () => {
   return (
@@ -78,7 +78,7 @@ const AppRoutes = () => {
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route path="/admin/super" element={<SuperAdminDashboard />} />
       <Route path="/admin/team" element={<TeamAdminDashboard />} />
-      <Route path="/admin/orders" element={<AdminOrders />} /> {/* ✅ ADDED */}
+      <Route path="/admin/orders" element={<AdminOrders />} />
     </Routes>
   );
 };

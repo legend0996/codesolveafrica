@@ -1,16 +1,142 @@
-# React + Vite
+# CodeSolveAfrica
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for African tech solutions, featuring project management, order tracking, and admin dashboards.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎨 Modern, responsive UI with Tailwind CSS
+- 📱 Mobile-first design
+- 🔒 Secure admin authentication
+- 📊 Project tracking system
+- 💳 Multiple payment methods
+- 🚀 Fast and optimized with Vite
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
+- React 18
+- Vite
+- Tailwind CSS
+- React Router
+- Lucide Icons
 
-## Expanding the ESLint configuration
+### Backend
+- Node.js
+- Express
+- MongoDB
+- JWT Authentication
+- Bcrypt
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Quick Start
+
+### Prerequisites
+- Node.js (v16+)
+- MongoDB
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/codesolveafrica.git
+cd codesolveafrica
+```
+
+2. Install frontend dependencies
+```bash
+npm install
+```
+
+3. Install backend dependencies
+```bash
+cd backend
+npm install
+```
+
+4. Set up environment variables
+
+Create `.env` file in the backend directory:
+```env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+PORT=5000
+```
+
+Create `.env` file in the root directory (optional):
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+5. Seed admin user
+```bash
+cd backend
+node seedAdmin.js
+```
+
+6. Start development servers
+
+Backend:
+```bash
+cd backend
+npm start
+```
+
+Frontend (in a new terminal):
+```bash
+npm run dev
+```
+
+Visit `http://localhost:5173` to view the application.
+
+## Admin Access
+
+Default admin credentials (change after first login):
+- Email: admin@codesolveafrica.com
+- Password: Admin@123
+
+Access admin dashboard at `/admin/login`
+
+## Project Structure
+
+```
+codesolveafrica/
+├── backend/              # Express backend
+│   ├── config/          # Database config
+│   ├── controllers/     # Route controllers
+│   ├── middlewares/     # Auth & error handling
+│   ├── models/          # MongoDB models
+│   └── routes/          # API routes
+├── src/                 # React frontend
+│   ├── assets/         # Static assets
+│   ├── components/     # Reusable components
+│   ├── config/         # App configuration
+│   ├── layouts/        # Layout components
+│   ├── pages/          # Page components
+│   └── routes/         # Route definitions
+└── public/             # Public assets
+```
+
+## Available Scripts
+
+### Frontend
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+
+### Backend
+- `npm start` - Start backend server
+- `node seedAdmin.js` - Create admin user
+
+## Deployment
+
+See deployment guides for:
+- [Vercel (Frontend)](https://vercel.com)
+- [Render/Railway (Backend)](https://render.com)
+- [MongoDB Atlas (Database)](https://mongodb.com/atlas)
+
+## License
+
+MIT
+
+## Contact
+
+For support or inquiries: contact@codesolveafrica.com
