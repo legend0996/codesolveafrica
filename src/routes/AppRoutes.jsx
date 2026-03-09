@@ -1,5 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 import Home from "../pages/Home";
 import CompletedProjects from "../pages/CompletedProjects";
@@ -76,9 +77,45 @@ const AppRoutes = () => {
       />
       {/* ================= ADMIN PAGES ================= */}
       <Route path="/admin/login" element={<AdminLogin />} />
-      <Route path="/admin/super" element={<SuperAdminDashboard />} />
-      <Route path="/admin/team" element={<TeamAdminDashboard />} />
-      <Route path="/admin/orders" element={<AdminOrders />} />
+      <Route
+        path="/admin/super"
+        element={
+          <ProtectedRoute>
+            <SuperAdminDashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/team"
+        element={
+          <ProtectedRoute>
+            <TeamAdminDashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/orders"
+        element={
+          <ProtectedRoute>
+            <AdminOrders />
+          </ProtectedRoute>
+        }
+      />
+      {/* 404 fallback */}
+      <Route
+        path="*"
+        element={
+          <MainLayout>
+            <div className="flex flex-col items-center justify-center py-24 space-y-4 text-center">
+              <h1 className="text-6xl font-bold text-primary-500">404</h1>
+              <p className="text-xl text-gray-600">Page not found</p>
+              <a href="/" className="text-primary-500 hover:underline font-medium">
+                Go back home
+              </a>
+            </div>
+          </MainLayout>
+        }
+      />
     </Routes>
   );
 };
