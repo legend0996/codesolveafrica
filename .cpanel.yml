@@ -1,0 +1,21 @@
+---
+deployment:
+  tasks:
+    # ─── STEP 1: Build the React frontend ───────────────────────────────────────
+    # Uses the Node.js version configured in cPanel's "Setup Node.js App"
+    - export NODE_ENV=production
+    - /usr/local/bin/npm install
+    - /usr/local/bin/npm run build
+
+    # ─── STEP 2: Copy built frontend to public_html ──────────────────────────────
+    # Replace "yourusername" with your actual cPanel account username
+    - export DEPLOYPATH=/home/yourusername/public_html
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R dist/. $DEPLOYPATH/
+
+    # ─── STEP 3: Deploy backend to Node.js app directory ────────────────────────
+    # Replace "yourusername" and "nodeapp" with your actual cPanel Node.js app folder
+    - export BACKENDPATH=/home/yourusername/nodeapp
+    - /bin/mkdir -p $BACKENDPATH
+    - /bin/cp -R backend/. $BACKENDPATH/
+    - /usr/local/bin/npm install --prefix $BACKENDPATH
