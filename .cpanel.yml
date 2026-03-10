@@ -8,14 +8,13 @@ deployment:
     - /usr/local/bin/npm run build
 
     # ─── STEP 2: Copy built frontend to public_html ──────────────────────────────
-    # Replace "yourusername" with your actual cPanel account username
-    - export DEPLOYPATH=/home/yourusername/public_html
+    - export DEPLOYPATH=/home3/logicore/codesolveafrica.co.ke
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp -R dist/. $DEPLOYPATH/
 
     # ─── STEP 3: Deploy backend to Node.js app directory ────────────────────────
-    # Replace "yourusername" and "nodeapp" with your actual cPanel Node.js app folder
-    - export BACKENDPATH=/home/yourusername/nodeapp
+    # Replace "nodeapp" with the folder name you set in cPanel Setup Node.js App
+    - export BACKENDPATH=/home3/logicore/codesolveafrica-backend
     - /bin/mkdir -p $BACKENDPATH
     - /bin/cp -R backend/. $BACKENDPATH/
     - /usr/local/bin/npm install --prefix $BACKENDPATH
