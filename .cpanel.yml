@@ -2,6 +2,7 @@
 deployment:
   tasks:
     - export NODE_ENV=production
+    - export VITE_API_URL=https://api.codesolveafrica.co.ke
     - /usr/local/bin/npm install
     - /usr/local/bin/npm run build
     - /bin/mkdir -p /home3/logicore/codesolveafrica.co.ke
