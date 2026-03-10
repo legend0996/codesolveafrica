@@ -1,11 +1,5 @@
 ---
 deployment:
   tasks:
-    - export NODE_ENV=production
-    - /usr/local/bin/npm install
-    - /usr/local/bin/npm run build
-    - /bin/mkdir -p /home3/logicore/codesolveafrica.co.ke
-    - /bin/cp -R dist/. /home3/logicore/codesolveafrica.co.ke/
-    - /bin/mkdir -p /home3/logicore/codesolveafrica-backend
-    - /bin/cp -R backend/. /home3/logicore/codesolveafrica-backend/
-    - /usr/local/bin/npm install --prefix /home3/logicore/codesolveafrica-backend
+    - /bin/true
+
