@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const projectUpdateSchema = new mongoose.Schema(
   {
@@ -17,4 +17,4 @@ const projectUpdateSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-export default mongoose.model("ProjectUpdate", projectUpdateSchema);
+module.exports = mongoose.model("ProjectUpdate", projectUpdateSchema);

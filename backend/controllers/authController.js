@@ -1,5 +1,5 @@
-import User from "../models/User.js";
-import jwt from "jsonwebtoken";
+const User = require("../models/User");
+const jwt = require("jsonwebtoken");
 
 // Generate JWT
 const generateToken = (id) => {
@@ -9,7 +9,7 @@ const generateToken = (id) => {
 };
 
 // ADMIN LOGIN
-export const loginAdmin = async (req, res) => {
+const loginAdmin = async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -41,7 +41,7 @@ export const loginAdmin = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-export const changePassword = async (req, res) => {
+const changePassword = async (req, res) => {
   try {
     const { newPassword } = req.body;
 
@@ -63,3 +63,5 @@ export const changePassword = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+module.exports = { loginAdmin, changePassword };

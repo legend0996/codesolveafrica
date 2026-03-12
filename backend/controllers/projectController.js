@@ -1,7 +1,7 @@
-import Project from "../models/Project.js";
+const Project = require("../models/Project");
 
 // GET all projects (public)
-export const getProjects = async (req, res) => {
+const getProjects = async (req, res) => {
   try {
     const projects = await Project.find().sort({ createdAt: -1 });
     res.json(projects);
@@ -11,7 +11,7 @@ export const getProjects = async (req, res) => {
 };
 
 // POST create project (admin)
-export const createProject = async (req, res) => {
+const createProject = async (req, res) => {
   try {
     const project = await Project.create(req.body);
     res.status(201).json(project);
@@ -21,7 +21,7 @@ export const createProject = async (req, res) => {
 };
 
 // PUT update project (admin)
-export const updateProject = async (req, res) => {
+const updateProject = async (req, res) => {
   try {
     const project = await Project.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -34,7 +34,7 @@ export const updateProject = async (req, res) => {
 };
 
 // DELETE project (admin)
-export const deleteProject = async (req, res) => {
+const deleteProject = async (req, res) => {
   try {
     const project = await Project.findByIdAndDelete(req.params.id);
     if (!project) return res.status(404).json({ message: "Project not found" });
@@ -43,3 +43,5 @@ export const deleteProject = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+module.exports = { getProjects, createProject, updateProject, deleteProject };

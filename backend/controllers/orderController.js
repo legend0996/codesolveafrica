@@ -1,4 +1,4 @@
-import Order from "../models/Order.js";
+const Order = require("../models/Order");
 
 // Generate readable project ID
 const generateProjectId = () => {
@@ -6,7 +6,7 @@ const generateProjectId = () => {
 };
 
 // CREATE ORDER (CLIENT)
-export const createOrder = async (req, res) => {
+const createOrder = async (req, res) => {
   try {
     const { clientPhone, clientEmail, projectType, description } = req.body;
 
@@ -34,7 +34,7 @@ export const createOrder = async (req, res) => {
 };
 
 // GET ALL ORDERS (ADMIN)
-export const getOrders = async (req, res) => {
+const getOrders = async (req, res) => {
   try {
     const orders = await Order.find().sort({ createdAt: -1 });
     res.json(orders);
@@ -42,3 +42,5 @@ export const getOrders = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+module.exports = { createOrder, getOrders };

@@ -1,7 +1,7 @@
-import Message from "../models/Message.js";
+const Message = require("../models/Message");
 
 // CLIENT: send message
-export const sendMessage = async (req, res) => {
+const sendMessage = async (req, res) => {
   try {
     const { clientPhone, clientEmail, description } = req.body;
 
@@ -25,7 +25,7 @@ export const sendMessage = async (req, res) => {
 };
 
 // ADMIN: get all messages
-export const getMessages = async (req, res) => {
+const getMessages = async (req, res) => {
   try {
     const messages = await Message.find().sort({ createdAt: -1 });
     res.json(messages);
@@ -34,3 +34,5 @@ export const getMessages = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+module.exports = { sendMessage, getMessages };

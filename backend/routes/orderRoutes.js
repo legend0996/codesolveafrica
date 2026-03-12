@@ -1,6 +1,6 @@
-import express from "express";
-import { createOrder, getOrders } from "../controllers/orderController.js";
-import protect from "../middlewares/authMiddleware.js";
+const express = require("express");
+const { createOrder, getOrders } = require("../controllers/orderController");
+const protect = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 
@@ -10,4 +10,4 @@ router.post("/", createOrder);
 // Admin views orders
 router.get("/", protect, getOrders);
 
-export default router;
+module.exports = router;

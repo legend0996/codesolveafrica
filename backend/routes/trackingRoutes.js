@@ -1,9 +1,9 @@
-import express from "express";
-import protect from "../middlewares/authMiddleware.js";
-import {
+const express = require("express");
+const protect = require("../middlewares/authMiddleware");
+const {
   trackOrder,
   addProjectUpdate,
-} from "../controllers/trackingController.js";
+} = require("../controllers/trackingController");
 
 const router = express.Router();
 
@@ -13,4 +13,4 @@ router.get("/:projectId", trackOrder);
 // Admin update
 router.post("/:projectId/update", protect, addProjectUpdate);
 
-export default router;
+module.exports = router;

@@ -1,8 +1,8 @@
-import Order from "../models/Order.js";
-import ProjectUpdate from "../models/ProjectUpdate.js";
+const Order = require("../models/Order");
+const ProjectUpdate = require("../models/ProjectUpdate");
 
 // CLIENT: track order by projectId
-export const trackOrder = async (req, res) => {
+const trackOrder = async (req, res) => {
   try {
     const { projectId } = req.params;
 
@@ -29,7 +29,7 @@ export const trackOrder = async (req, res) => {
 };
 
 // ADMIN: add project update
-export const addProjectUpdate = async (req, res) => {
+const addProjectUpdate = async (req, res) => {
   try {
     const { projectId } = req.params;
     const { message, status } = req.body;
@@ -61,3 +61,5 @@ export const addProjectUpdate = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+module.exports = { trackOrder, addProjectUpdate };
