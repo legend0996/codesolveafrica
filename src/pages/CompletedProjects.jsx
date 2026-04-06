@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ExternalLink, CheckCircle } from "lucide-react";
 
 const CompletedProjects = () => {
@@ -75,6 +76,11 @@ const CompletedProjects = () => {
 
   return (
     <div className="space-y-8 md:space-y-12">
+      <Helmet>
+        <title>Completed Projects | CodeSolveAfrica</title>
+        <meta name="description" content="Browse CodeSolveAfrica's portfolio of completed websites, mobile apps and business systems built for clients across Africa." />
+        <link rel="canonical" href="https://codesolveafrica.co.ke/projects/completed" />
+      </Helmet>
       {/* Header */}
       <div className="space-y-3 md:space-y-4">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">

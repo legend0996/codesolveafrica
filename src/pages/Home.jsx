@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   Code,
   Smartphone,
@@ -67,6 +68,12 @@ const Home = () => {
   ];
 
   return (
+    <>
+      <Helmet>
+        <title>CodeSolveAfrica | Web & Mobile Development in Africa</title>
+        <meta name="description" content="CodeSolveAfrica builds custom websites, mobile apps, e-commerce platforms and business systems for African businesses. Order a project today." />
+        <link rel="canonical" href="https://codesolveafrica.co.ke/" />
+      </Helmet>
     <div className="space-y-20">
       {/* Hero Section */}
       <section className="text-center space-y-6 py-12 md:py-20">
@@ -236,6 +243,7 @@ const Home = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

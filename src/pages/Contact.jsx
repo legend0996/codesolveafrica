@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import { API_URL } from "../config/api";
 
 const Contact = () => {
@@ -47,23 +48,30 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <Phone className="w-6 h-6" />,
-      label: "Phone",
-      value: "+1 (555) 123-4567",
+      label: "Phone / WhatsApp",
+      value: "0799 656 264",
+      href: "https://wa.me/254799656264",
     },
     {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
       value: "contact@codesolveafrica.com",
+      href: "mailto:contact@codesolveafrica.com",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       label: "Location",
-      value: "Africa",
+      value: "Nairobi, Kenya",
     },
   ];
 
   return (
     <div className="space-y-8 md:space-y-12">
+      <Helmet>
+        <title>Contact Us | CodeSolveAfrica</title>
+        <meta name="description" content="Get in touch with CodeSolveAfrica. Tell us about your web, mobile app or business software project and we'll get back to you quickly." />
+        <link rel="canonical" href="https://codesolveafrica.co.ke/contact" />
+      </Helmet>
       {/* Header */}
       <div className="text-center space-y-4">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Get in Touch</h1>
@@ -85,7 +93,13 @@ const Contact = () => {
                   <h3 className="font-semibold text-gray-900 mb-1">
                     {info.label}
                   </h3>
-                  <p className="text-gray-600">{info.value}</p>
+                  {info.href ? (
+                    <a href={info.href} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline font-medium">
+                      {info.value}
+                    </a>
+                  ) : (
+                    <p className="text-gray-600">{info.value}</p>
+                  )}
                 </div>
               </div>
             </div>

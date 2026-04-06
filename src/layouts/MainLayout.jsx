@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const WHATSAPP_NUMBER = "254700000000"; // replace with your WhatsApp number
+const WHATSAPP_NUMBER = "254799656264";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hi CodeSolveAfrica! 👋 I'm interested in your services. Can we talk?"
 );

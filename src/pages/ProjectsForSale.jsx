@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ShoppingCart, ExternalLink, Star } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 
 const ProjectsForSale = () => {
@@ -94,6 +95,11 @@ const ProjectsForSale = () => {
 
   return (
     <div className="space-y-12">
+      <Helmet>
+        <title>Projects for Sale | CodeSolveAfrica</title>
+        <meta name="description" content="Buy ready-made websites, apps and business systems from CodeSolveAfrica. Get a working product fast at an affordable price." />
+        <link rel="canonical" href="https://codesolveafrica.co.ke/projects/for-sale" />
+      </Helmet>
       {/* Header */}
       <div className="space-y-4">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block admin pages from being indexed
+Disallow: /admin/
+Disallow: /admin-login
+
+Sitemap: https://codesolveafrica.co.ke/sitemap.xml
