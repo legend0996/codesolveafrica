@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
-import { ShoppingCart, ExternalLink, Star } from "lucide-react";
+import { ShoppingCart, MessageCircle, Star } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
+
+import airtimeVending from "../assets/for-sale/airtime-vending-system.png";
+import chamaMis from "../assets/for-sale/chama-mis.png";
+import hospitalMis from "../assets/for-sale/hospital-management-system.png";
+import kenyaMathQuest from "../assets/for-sale/kenya-math-quest.png";
+import restaurantMis from "../assets/for-sale/restaurant-mis.png";
+import schoolMis from "../assets/for-sale/school-management-system.png";
+import stockeaseMis from "../assets/for-sale/stockease-mis.png";
 
 const ProjectsForSale = () => {
   const [imageErrors, setImageErrors] = useState({});
@@ -18,78 +26,78 @@ const ProjectsForSale = () => {
       id: 1,
       title: "School Management System",
       description:
-        "Complete school management platform with student enrollment, attendance tracking, fee management, grading system, and parent portal. Perfect for educational institutions.",
+        "A complete school management platform covering student enrollment, attendance tracking, fee collection, academic grading, timetable management, and a parent portal. Ideal for primary, secondary, and tertiary institutions.",
       price: "KSH 299,900",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
-      link: "https://example.com/school-system",
-      features: ["Student Management", "Attendance Tracking", "Fee Management", "Grading System"],
+      image: schoolMis,
+      link: "#",
+      features: ["Student Enrollment", "Attendance & Grading", "Fee Management", "Parent Portal"],
       rating: 4.9,
     },
     {
       id: 2,
-      title: "Complete E-Commerce Store",
+      title: "Hospital Management System",
       description:
-        "Ready-to-use e-commerce platform with product catalog, shopping cart, payment integration, and admin dashboard. Fully customizable.",
-      price: "KSH 249,900",
-      image: "https://images.unsplash.com/photo-1460925895917-adf4e5e5e2b9?w=500&h=300&fit=crop",
-      link: "https://example.com/business-website",
-      features: ["Product Management", "Payment Gateway", "Inventory System", "Admin Panel"],
-      rating: 4.8,
-    },
-    {
-      id: 3,
-      title: "Retail POS & Inventory System",
-      description:
-        "Point of sale system for shops with real-time inventory tracking, sales analytics, and multi-user support.",
-      price: "KSH 199,900",
-      image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=500&h=300&fit=crop",
-      link: "https://example.com/pos-system",
-      features: ["POS Terminal", "Inventory Tracking", "Sales Reports", "Receipt Printer Support"],
+        "A fully-featured hospital MIS for managing outpatient & inpatient records, doctor scheduling, lab results, pharmacy stock, and billing. Comes with role-based access for doctors, nurses, and admin staff.",
+      price: "KSH 449,900",
+      image: hospitalMis,
+      link: "#",
+      features: ["Patient Records", "Doctor Scheduling", "Pharmacy & Lab", "Billing & Reports"],
       rating: 4.9,
     },
     {
-      id: 4,
-      title: "Professional Portfolio Website",
+      id: 3,
+      title: "Restaurant MIS",
       description:
-        "Modern portfolio website for developers, designers, and freelancers. SEO optimized with contact forms and project showcase.",
-      price: "KSH 79,900",
-      image: "https://images.unsplash.com/photo-1555721519-a29a7e91c7d0?w=500&h=300&fit=crop",
-      link: "https://example.com/portfolio-site",
-      features: ["Responsive Design", "SEO Ready", "Contact Form", "Project Gallery"],
-      rating: 4.7,
+        "A restaurant management information system with table ordering, kitchen display, menu management, waiter app, daily sales reports, and M-Pesa payment integration. Built for single and multi-branch restaurants.",
+      price: "KSH 189,900",
+      image: restaurantMis,
+      link: "#",
+      features: ["Table & Order Management", "Kitchen Display", "Menu Control", "Sales Reports"],
+      rating: 4.8,
+    },
+    {
+      id: 4,
+      title: "Chama MIS",
+      description:
+        "A group savings and investment management system tailored for Kenyan Chama groups. Manages member contributions, loans, dividends, meeting records, and financial statements with full transparency.",
+      price: "KSH 149,900",
+      image: chamaMis,
+      link: "#",
+      features: ["Contributions Tracking", "Loan Management", "Dividend Calculation", "Financial Reports"],
+      rating: 4.8,
     },
     {
       id: 5,
-      title: "Business Management Suite",
+      title: "StockEase MIS",
       description:
-        "Comprehensive business management tool with CRM, project tracking, team collaboration, and reporting features.",
-      price: "KSH 349,900",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
-      link: "https://example.com/business-suite",
-      features: ["CRM Module", "Project Management", "Team Chat", "Advanced Reports"],
+        "An inventory and stock management system for retail shops, wholesalers, and warehouses. Features real-time stock levels, purchase orders, supplier management, low-stock alerts, and detailed analytics.",
+      price: "KSH 199,900",
+      image: stockeaseMis,
+      link: "#",
+      features: ["Real-time Stock Tracking", "Purchase Orders", "Supplier Management", "Sales Analytics"],
       rating: 4.9,
     },
     {
       id: 6,
-      title: "Blog & Content Management",
+      title: "Airtime Vending System",
       description:
-        "Powerful blogging platform with content management, SEO optimization, social sharing, and email subscriptions.",
-      price: "KSH 59,900",
-      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=500&h=300&fit=crop",
-      link: "https://example.com/blog-cms",
-      features: ["Article Publishing", "SEO Tools", "Email Newsletter", "Social Integration"],
-      rating: 4.6,
+        "A multi-network airtime reselling and vending platform supporting Safaricom, Airtel, and Telkom. Includes agent management, float management, commission tracking, and M-Pesa bulk API integration.",
+      price: "KSH 229,900",
+      image: airtimeVending,
+      link: "#",
+      features: ["Multi-network Support", "Agent Management", "Float & Commission Tracking", "M-Pesa Integration"],
+      rating: 4.7,
     },
     {
       id: 7,
-      title: "Service Booking Platform",
+      title: "Kenya Math Quest",
       description:
-        "Online booking system for service providers. Includes appointment scheduling, payment processing, and client management.",
-      price: "KSH 209,900",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=500&h=300&fit=crop",
-      link: "https://example.com/booking",
-      features: ["Calendar Booking", "Payment Processing", "Email Reminders", "Client Portal"],
-      rating: 4.8,
+        "An interactive math learning and quiz platform designed for Kenyan CBC and 8-4-4 learners. Features gamified lessons, timed challenges, teacher dashboards, and progress reports for parents.",
+      price: "KSH 99,900",
+      image: kenyaMathQuest,
+      link: "#",
+      features: ["CBC & 8-4-4 Curriculum", "Gamified Quizzes", "Teacher Dashboard", "Parent Progress Reports"],
+      rating: 4.7,
     },
   ];
 
@@ -127,16 +135,19 @@ const ProjectsForSale = () => {
                 onError={() => handleImageError(project.id)}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
-              <div className="absolute top-0 right-0 m-3 bg-primary-600 text-white px-3 py-1 rounded-lg font-bold">
-                {project.price}
+              <div className="absolute top-0 right-0 m-3 bg-green-500 text-white text-xs font-semibold px-2 md:px-3 py-1 rounded-full">
+                Available
               </div>
             </div>
 
             {/* Content */}
             <div className="p-4 md:p-6 flex flex-col flex-grow">
-              <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2">
-                {project.title}
-              </h3>
+              <div className="flex items-start justify-between mb-2 gap-2">
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">
+                  {project.title}
+                </h3>
+                <span className="text-sm md:text-base font-bold text-primary-600 whitespace-nowrap">{project.price}</span>
+              </div>
               <p className="text-gray-600 text-xs md:text-sm mb-4">{project.description}</p>
 
               {/* Rating */}
@@ -168,12 +179,12 @@ const ProjectsForSale = () => {
 
               {/* CTA */}
               <a
-                href={project.link}
+                href={`https://wa.me/254799656264?text=${encodeURIComponent(`Hi CodeSolveAfrica, I'm interested in purchasing the *${project.title}* (${project.price}). Could you please share more details and arrange a demo? Thank you.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full bg-primary-500 hover:bg-primary-600 text-white hover:!text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 mt-auto focus:outline-none focus:ring-2 focus:ring-primary-300"
+                className="inline-flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white hover:!text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 mt-auto focus:outline-none focus:ring-2 focus:ring-green-300"
               >
-                View Demo <ExternalLink className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" /> Buy on WhatsApp
               </a>
             </div>
           </div>

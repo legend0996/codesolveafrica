@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ExternalLink, CheckCircle } from "lucide-react";
+import { MessageCircle, CheckCircle } from "lucide-react";
+
+import kredochapchap from "../assets/completed-projects/kredochapchap.jpeg";
+import logicorex from "../assets/completed-projects/logicorex.jpeg";
+import medicPortfolio from "../assets/completed-projects/medic-portfolio.jpeg";
+import shoppieShop from "../assets/completed-projects/shoppie-shop.jpeg";
+import tipisFarm from "../assets/completed-projects/tipis-farm.jpeg";
+import valentinesUi from "../assets/completed-projects/valentines-ui.jpeg";
 
 const CompletedProjects = () => {
   const fallbackImage =
@@ -13,64 +20,64 @@ const CompletedProjects = () => {
 
   const projects = [
     {
-      id: 2,
-      title: "School Management System",
+      id: 1,
+      title: "Shoppie Shop",
       description:
-        "Comprehensive system for managing students, teachers, fees, attendance, and academic records with real-time reporting.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
-      link: "https://example.com/school-system",
-      category: "Education",
-      year: 2024,
+        "A modern e-commerce storefront built for a local retailer. Features product listings, cart management, M-Pesa payment integration, and a clean admin dashboard for order and inventory control.",
+      image: shoppieShop,
+      link: "#",
+      category: "E-Commerce",
+      year: 2025,
     },
     {
-      id: 1,
-      title: "E-Commerce Website",
+      id: 2,
+      title: "KredoChapChap",
       description:
-        "A full e-commerce platform with product listings, shopping cart, and admin management. Complete payment integration included.",
-      image: "https://images.unsplash.com/photo-1460925895917-adf4e5e5e2b9?w=500&h=300&fit=crop",
-      link: "https://example.com/ecommerce",
-      category: "E-Commerce",
-      year: 2024,
+        "A mobile-first micro-lending web application enabling users to apply for instant loans, track repayments, and manage their credit profiles. Built with real-time notifications and M-Pesa disbursement.",
+      image: kredochapchap,
+      link: "#",
+      category: "Fintech",
+      year: 2025,
     },
     {
       id: 3,
-      title: "Business Portfolio Website",
+      title: "LogiCoreX",
       description:
-        "Professional company portfolio website with modern design, SEO optimization, and brand visibility enhancements.",
-      image: "https://images.unsplash.com/photo-1555721519-a29a7e91c7d0?w=500&h=300&fit=crop",
-      link: "https://example.com/portfolio",
-      category: "Corporate",
-      year: 2023,
+        "A professional tech company website built for LogiCoreX — showcasing their software solutions, services, and team. Features a modern design, service listings, client testimonials, and a contact system.",
+      image: logicorex,
+      link: "#",
+      category: "Tech Company",
+      year: 2024,
     },
     {
       id: 4,
-      title: "Restaurant Management App",
+      title: "Medic Portfolio",
       description:
-        "Mobile app for managing restaurant operations including order management, inventory, and customer reviews.",
-      image: "https://images.unsplash.com/photo-1551632440-1cdcea16c352?w=500&h=300&fit=crop",
-      link: "https://example.com/restaurant",
-      category: "Hospitality",
-      year: 2023,
+        "A clean, professional portfolio website developed for a medical doctor to showcase qualifications, publications, and services. Features appointment booking and a responsive, SEO-optimized design.",
+      image: medicPortfolio,
+      link: "#",
+      category: "Healthcare",
+      year: 2024,
     },
     {
       id: 5,
-      title: "Logistics Tracking Platform",
+      title: "Tipi's Farm",
       description:
-        "Real-time tracking system for logistics companies with live GPS, dispatch management, and customer notifications.",
-      image: "https://images.unsplash.com/photo-1553531889-e6cf89d57269?w=500&h=300&fit=crop",
-      link: "https://example.com/logistics",
-      category: "Logistics",
-      year: 2023,
+        "A farm management and online marketplace platform for an agribusiness. Allows farmers to list produce, manage orders, and connect with buyers directly. Includes a dashboard for tracking sales and stock.",
+      image: tipisFarm,
+      link: "#",
+      category: "Agriculture",
+      year: 2025,
     },
     {
       id: 6,
-      title: "Healthcare Clinic System",
+      title: "Valentine's UI",
       description:
-        "Patient management system with appointment scheduling, medical records, and prescription management for clinics.",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=300&fit=crop",
-      link: "https://example.com/healthcare",
-      category: "Healthcare",
-      year: 2024,
+        "A beautifully crafted themed UI/UX project — a gifting and event-booking web app for Valentine's Day. Features animated cards, gift personalization, and an interactive booking flow.",
+      image: valentinesUi,
+      link: "#",
+      category: "Events & Gifting",
+      year: 2025,
     },
   ];
 
@@ -135,12 +142,12 @@ const CompletedProjects = () => {
 
               {/* CTA */}
               <a
-                href={project.link}
+                href={`https://wa.me/254799656264?text=${encodeURIComponent(`Hi CodeSolveAfrica, I came across your *${project.title}* project on your portfolio and I'm very impressed. I'd love to discuss something similar for my business. Are you available?`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full bg-primary-500 hover:bg-primary-600 text-white hover:!text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300"
+                className="inline-flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white hover:!text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-300"
               >
-                View Project <ExternalLink className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" /> Enquire on WhatsApp
               </a>
             </div>
           </div>
