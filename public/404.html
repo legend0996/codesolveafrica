@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CodeSolveAfrica</title>
+    <script>
+      // GitHub Pages SPA fix — redirect all 404s back to index.html
+      // preserving the path via the ?p= query param
+      var path = location.pathname.slice(1).replace(/~and~/g, '&');
+      var search = location.search.slice(1) ? '~and~' + location.search.slice(1) : '';
+      var hash = location.hash ? '&hash=' + location.hash.slice(1) : '';
+      location.replace(
+        '/?p=' + encodeURIComponent(path + search) + hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

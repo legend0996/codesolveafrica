@@ -27,7 +27,6 @@ const ProjectsForSale = () => {
       title: "School Management System",
       description:
         "A complete school management platform covering student enrollment, attendance tracking, fee collection, academic grading, timetable management, and a parent portal. Ideal for primary, secondary, and tertiary institutions.",
-      price: "KSH 299,900",
       image: schoolMis,
       link: "#",
       features: ["Student Enrollment", "Attendance & Grading", "Fee Management", "Parent Portal"],
@@ -38,7 +37,6 @@ const ProjectsForSale = () => {
       title: "Hospital Management System",
       description:
         "A fully-featured hospital MIS for managing outpatient & inpatient records, doctor scheduling, lab results, pharmacy stock, and billing. Comes with role-based access for doctors, nurses, and admin staff.",
-      price: "KSH 449,900",
       image: hospitalMis,
       link: "#",
       features: ["Patient Records", "Doctor Scheduling", "Pharmacy & Lab", "Billing & Reports"],
@@ -49,7 +47,6 @@ const ProjectsForSale = () => {
       title: "Restaurant MIS",
       description:
         "A restaurant management information system with table ordering, kitchen display, menu management, waiter app, daily sales reports, and M-Pesa payment integration. Built for single and multi-branch restaurants.",
-      price: "KSH 189,900",
       image: restaurantMis,
       link: "#",
       features: ["Table & Order Management", "Kitchen Display", "Menu Control", "Sales Reports"],
@@ -60,7 +57,6 @@ const ProjectsForSale = () => {
       title: "Chama MIS",
       description:
         "A group savings and investment management system tailored for Kenyan Chama groups. Manages member contributions, loans, dividends, meeting records, and financial statements with full transparency.",
-      price: "KSH 149,900",
       image: chamaMis,
       link: "#",
       features: ["Contributions Tracking", "Loan Management", "Dividend Calculation", "Financial Reports"],
@@ -71,7 +67,6 @@ const ProjectsForSale = () => {
       title: "StockEase MIS",
       description:
         "An inventory and stock management system for retail shops, wholesalers, and warehouses. Features real-time stock levels, purchase orders, supplier management, low-stock alerts, and detailed analytics.",
-      price: "KSH 199,900",
       image: stockeaseMis,
       link: "#",
       features: ["Real-time Stock Tracking", "Purchase Orders", "Supplier Management", "Sales Analytics"],
@@ -82,7 +77,6 @@ const ProjectsForSale = () => {
       title: "Airtime Vending System",
       description:
         "A multi-network airtime reselling and vending platform supporting Safaricom, Airtel, and Telkom. Includes agent management, float management, commission tracking, and M-Pesa bulk API integration.",
-      price: "KSH 229,900",
       image: airtimeVending,
       link: "#",
       features: ["Multi-network Support", "Agent Management", "Float & Commission Tracking", "M-Pesa Integration"],
@@ -93,7 +87,6 @@ const ProjectsForSale = () => {
       title: "Kenya Math Quest",
       description:
         "An interactive math learning and quiz platform designed for Kenyan CBC and 8-4-4 learners. Features gamified lessons, timed challenges, teacher dashboards, and progress reports for parents.",
-      price: "KSH 99,900",
       image: kenyaMathQuest,
       link: "#",
       features: ["CBC & 8-4-4 Curriculum", "Gamified Quizzes", "Teacher Dashboard", "Parent Progress Reports"],
@@ -142,12 +135,9 @@ const ProjectsForSale = () => {
 
             {/* Content */}
             <div className="p-4 md:p-6 flex flex-col flex-grow">
-              <div className="flex items-start justify-between mb-2 gap-2">
-                <h3 className="text-base md:text-lg font-semibold text-gray-900">
-                  {project.title}
-                </h3>
-                <span className="text-sm md:text-base font-bold text-primary-600 whitespace-nowrap">{project.price}</span>
-              </div>
+              <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2">
+                {project.title}
+              </h3>
               <p className="text-gray-600 text-xs md:text-sm mb-4">{project.description}</p>
 
               {/* Rating */}
@@ -179,7 +169,7 @@ const ProjectsForSale = () => {
 
               {/* CTA */}
               <a
-                href={`https://wa.me/254799656264?text=${encodeURIComponent(`Hi CodeSolveAfrica, I'm interested in purchasing the *${project.title}* (${project.price}). Could you please share more details and arrange a demo? Thank you.`)}`}
+                href={`https://wa.me/254799656264?text=${encodeURIComponent(`Hi CodeSolveAfrica, I'm interested in purchasing the *${project.title}*. Could you please share more details and arrange a demo? Thank you.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white hover:!text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 mt-auto focus:outline-none focus:ring-2 focus:ring-green-300"
